@@ -46,7 +46,7 @@ In particular, we will do the following:
  1. We will convert the content of the `FIRST APPEARANCE` field to an actual date we can work with (hint: use a `$function` expression);
  2. We will attach a field to indicate whether the characters and superheroes are from `Marvel` or `DC`;
  3. We will remove the unnecessary escape characters from the `urlslug` and `name` fields;
- 4. We will merge both the imported Marvel and DC collections into one `characters` collection.
+ 4. We will merge (hint: `$merge`) both the imported Marvel and DC collections into one `characters` collection.
 
 <details>
 <summary>See the "Clean Marvel" pipeline</summary>
@@ -57,7 +57,7 @@ In particular, we will do the following:
     FIRST_APPEARANCE: {
       $dateFromParts: {
         year: '$Year',
-        month: {
+        month: {****
           $function: {
             lang: 'js',
             args: [{
@@ -147,7 +147,21 @@ In particular, we will do the following:
         }
       }
     },
-    company: 'DC'
+    company: 'DC',
+    urlslug: {
+      $replaceAll: {
+        input: '$urlslug',
+        find: '\\/',
+        replacement: '/'
+      }
+    },
+    name: {
+      $replaceAll: {
+        input: '$name',
+        find: '\\"',
+        replacement: '"'
+      }
+    }
   }
 }, {
   $unset: [
@@ -162,3 +176,42 @@ In particular, we will do the following:
 ```
 </details>
 
+### Make sure the schema is what we expect
+
+To avoid surprises later on, let's make sure the data is what it should be and that all the documents have a consistent schema.
+
+The [Schema Analyzer in Compass](https://www.mongodb.com/docs/compass/current/schema/) comes handy for this type of tasks.
+
+![Schema Analyzer](resources/schema-year.png)
+
+We can see that we missed one discrepancy between the 2 original collections: `YEAR` vs `Year`.
+
+We can fix that with another `$merge`.
+
+<details>
+<summary>Pipeline to fix the `Year` vs `YEAR` discrepancy</summary>
+
+```javascript
+[{
+  $match: {
+    Year: {
+      $ne: null
+    }
+  }
+}, {
+  $set: {
+    YEAR: '$Year'
+  }
+}, {
+  $unset: [
+    'Year'
+  ]
+}, {
+  $merge: {
+    into: 'characters',
+    on: '_id',
+    whenMatched: 'replace'
+  }
+}]
+```
+</details>
