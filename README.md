@@ -215,3 +215,77 @@ We can fix that with another `$merge`.
 }]
 ```
 </details>
+
+### Let's have some fun with the data!
+
+#### What has the best year for superheroes?
+
+Let's make a "Hereos by year leaderboard". And we define superheroes as `Good Characters`.
+
+<details>
+<summary>Heroes by year pipeline</summary>
+
+```javascript
+[{
+  $match: {
+    YEAR: {
+      $ne: null
+    },
+    ALIGN: 'Good Characters'
+  }
+}, {
+  $group: {
+    _id: '$YEAR',
+    total: {
+      $sum: 1
+    },
+    // Optional, in case we want to do something with the
+    // characters afterwards.
+    characters: {
+      $push: '$$ROOT'
+    }
+  }
+}, {
+  $sort: {
+    total: -1
+  }
+}]
+```
+</details>
+
+#### And what is the best month?
+
+That's slightly more challenging, but fear not! It's actually quite intuitive, and all the work we did earlier to make `FIRST_APPEARANCE`
+an actual date will make that easy.
+
+<details>
+<summary>Heroes by month pipeline</summary>
+
+```javascript
+[{
+  $match: {
+    YEAR: {
+      $ne: null
+    },
+    ALIGN: 'Good Characters'
+  }
+}, {
+  $set: {
+    FIRST_APPEARANCE_MONTH: {
+      $month: '$FIRST_APPEARANCE'
+    }
+  }
+}, {
+  $group: {
+    _id: '$FIRST_APPEARANCE_MONTH',
+    total: {
+      $sum: 1
+    }
+  }
+}, {
+  $sort: {
+    total: -1
+  }
+}]
+```
+</details>
