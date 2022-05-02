@@ -289,3 +289,33 @@ an actual date will make that easy.
 }]
 ```
 </details>
+
+#### Full text search
+
+One use-case you will find very often in the applications you build is full text search. In our case, with this big catalog of
+superheroes, we may want to help users find information for a character of which they don't remember the name very well.
+
+We can support that by enabling full text search in our collection with the power of Atlas Search. That requires sligthly more
+setup than your usual index, but it's quite straightforward to do. Head over to your Atlas account and create a search index
+for the `comics` collection. The default settings will do.
+
+![search index creation](resources/create-search-index.png)
+
+Now full text fuzzy search is just one aggregation stage away.
+
+<details>
+<summary>Full text search by name</summary>
+
+```javascript
+[{
+  $search: {
+    index: 'default',
+    text: {
+      query: '<name to search>',
+      path: 'name',
+      fuzzy: {}
+    }
+  }
+}]
+```
+</details>
