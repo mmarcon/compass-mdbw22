@@ -23,7 +23,7 @@ export default function Leaderboard() {
       </Head>
 
       <main>
-        <div className='row row-cols-auto justify-content-md-center mt-5'>
+        <div className='row row-cols-auto mt-5'>
           <div className='col-md-auto'>
             <h1>
               Game Leaderboard
@@ -33,7 +33,7 @@ export default function Leaderboard() {
             </p>
           </div>
         </div>
-        <div className='row row-cols-auto justify-content-md-center mt-5'>
+        <div className='row row-cols-auto mt-5'>
           {isLoading ? <p>Loading leaderboard...</p> : <LeaderboardTable data={data} />}
         </div>
       </main>

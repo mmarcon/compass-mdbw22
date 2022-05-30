@@ -33,7 +33,7 @@ export default function GoodVsEvil() {
       </Head>
 
       <main>
-        <div className='row row-cols-auto justify-content-md-center mt-5'>
+        <div className='row row-cols-auto mt-5'>
           <div className='col-md-auto'>
             <h1>
               Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️
@@ -46,7 +46,7 @@ export default function GoodVsEvil() {
 
         {
         isLoading ?
-          <p className='row row-cols-auto justify-content-md-center mt-5'>Loading cards...</p> : 
+          <p className='row row-cols-auto mt-5'>Loading cards...</p> : 
           data && <div>
             <Team team={data[0]} />
             <Team team={data[1]} />

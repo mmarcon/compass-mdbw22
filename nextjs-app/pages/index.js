@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className='row row-cols-auto justify-content-md-center mt-5'>
+        <div className='row row-cols-auto mt-5'>
           <div className='col-md-auto'>
             <h1>
               <a href='https://www.mongodb.com/products/compass'>Compass</a> gives you Query API superpowers 🦸🏼‍♀️
@@ -22,59 +22,60 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='row row-cols-auto justify-content-md-center mt-5'>
+        <div className='row row-cols-4 row-cols-md-4 g-4'>
           <div className='col'>
-            <div className='card'>
-              <div className='card-body'>
-                <h5 className='card-title'>Compass Docs</h5>
-                <p className='card-text'><a href='https://www.mongodb.com/docs/compass/current/'>Useful information on how to use Compass</a>.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='col'>
-            <div className='card'>
-              <div className='card-body'>
-                <h5 className='card-title'>MongoDB Aggregations Docs</h5>
-                <p className='card-text'><a href='https://www.mongodb.com/docs/manual/reference/aggregation/'>Documentation for the aggregation framework</a>.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className='row row-cols-auto justify-content-md-center mt-5'>
-          <div className='col'>
-            <div className='card'>
+            <div className='card h-100 border-primary'>
+              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
               <div className='card-body'>
                 <h5 className='card-title'>Leaderboard</h5>
                 <p className='card-text'>
-                  <Link href="/leaderboard">
-                    <a>Go to the Leaderboard</a>
-                  </Link>.
+                  Shows the leadearboard for the Superheroes game.
                 </p>
+                <Link href="/leaderboard">
+                  <a className='btn btn-primary'>Go to the Leaderboard &rarr;</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='card h-100 border-primary'>
+              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
+              <div className='card-body'>
+                <h5 className='card-title'>Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️</h5>
+                <p className='card-text'>
+                  Shows the result of an hypothetical battle
+                  between good and evil.
+                </p>
+                <Link href="/good-vs-evil">
+                  <a className='btn btn-primary'>Go to the Good vs Evil match &rarr;</a>
+                </Link>
               </div>
             </div>
           </div>
           <div className='col'>
-            <div className='card'>
+            <div className='card border-info h-100'>
+              <div className='card-header'>ℹ Resources</div>
               <div className='card-body'>
-                <h5 className='card-title'>Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️</h5>
-                <p className='card-text'>
-                  <Link href="/good-vs-evil">
-                    <a>Go to the Good vs Evil match</a>
-                  </Link>.
-                </p>
+                <h5 className='card-title'>Compass Docs</h5>
+                <p className='card-text'>If you are looking for how to do something in Compass, the online documentation is your best resource.</p>
+                <a className='btn btn-info' href='https://www.mongodb.com/docs/compass/current/'>Go to the online docs &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='card border-info h-100'>
+              <div className='card-header'>ℹ Resources</div>
+              <div className='card-body'>
+                <h5 className='card-title'>MongoDB Aggregations Docs</h5>
+                <p className='card-text'>If you need to read the documentation for some of the aggregation framework stages and operators, check out the online manual.</p>
+                <a className='btn btn-info' href='https://www.mongodb.com/docs/manual/reference/aggregation/'>Agg. Framework docs &rarr;</a>
               </div>
             </div>
           </div>
         </div>
       </main>
-
-      <style jsx>{`
-      .card {
-        width: 18rem;
-      }
-    `}</style>
     </div>
   )
 }
