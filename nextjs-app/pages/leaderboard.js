@@ -29,7 +29,7 @@ export default function Leaderboard() {
               Game Leaderboard
             </h1>
             <p className='lead'>
-              Edit <code>pages/leaderboard.js</code>
+              Edit <code>pages/leaderboard.js</code> to update this page.
             </p>
           </div>
         </div>

@@ -39,7 +39,7 @@ export default function GoodVsEvil() {
               Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️
             </h1>
             <p className='lead'>
-              Edit <code>pages/good-vs-evil.js</code>
+              Edit <code>pages/good-vs-evil.js</code> to update this page.
             </p>
           </div>
         </div>
