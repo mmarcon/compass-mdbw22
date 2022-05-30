@@ -27,11 +27,27 @@ export default function Home() {
             <div className='card h-100 border-primary'>
               <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
               <div className='card-body'>
+                <h5 className='card-title'>Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️</h5>
+                <p className='card-text'>
+                  Shows the result of an hypothetical battle
+                  between good and evil.
+                </p>
+                <Link href='/good-vs-evil'>
+                  <a className='btn btn-primary'>Go to the Good vs Evil match &rarr;</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='card h-100 border-primary'>
+              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
+              <div className='card-body'>
                 <h5 className='card-title'>Leaderboard</h5>
                 <p className='card-text'>
                   Shows the leadearboard for the Superheroes game.
                 </p>
-                <Link href="/leaderboard">
+                <Link href='/leaderboard'>
                   <a className='btn btn-primary'>Go to the Leaderboard &rarr;</a>
                 </Link>
               </div>
@@ -42,17 +58,33 @@ export default function Home() {
             <div className='card h-100 border-primary'>
               <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
               <div className='card-body'>
-                <h5 className='card-title'>Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️</h5>
+                <h5 className='card-title'>Leaderboard by country</h5>
                 <p className='card-text'>
-                  Shows the result of an hypothetical battle
-                  between good and evil.
+                  Shows the leadearboard by country for the Superheroes game.
                 </p>
-                <Link href="/good-vs-evil">
-                  <a className='btn btn-primary'>Go to the Good vs Evil match &rarr;</a>
+                <Link href='/leaderboard-by-country'>
+                  <a className='btn btn-primary'>Go to the Leaderboard &rarr;</a>
                 </Link>
               </div>
             </div>
           </div>
+
+          <div className='col'>
+            <div className='card h-100 border-primary'>
+              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
+              <div className='card-body'>
+                <h5 className='card-title'>Superheroes Catalogue</h5>
+                <p className='card-text'>
+                  Show the entire catalogue of superheroes, with the possibility to lookup superheroes
+                  by different criteria using <a href='https://www.mongodb.com/docs/atlas/atlas-search/'>Atlas Search</a>.
+                </p>
+                <Link href='/superheroes-catalogue'>
+                  <a className='btn btn-primary'>Go to the catalogue &rarr;</a>
+                </Link>
+              </div>
+            </div>
+          </div>
+
           <div className='col'>
             <div className='card border-info h-100'>
               <div className='card-header'>ℹ Resources</div>

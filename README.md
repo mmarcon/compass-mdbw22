@@ -24,7 +24,7 @@ To make the best out of this workshop, we recommend setting up the following:
 
  1. An Atlas cluster (free-tier should be enough). Follow [these steps](link-to-docs) to set one up.
  2. [Compass](https://www.mongodb.com/docs/compass/current/install/) connected to your Atlas cluster.
- 3. Your favorite programming language and framework. As an example, we provide the skeleton of a web application built with ... that should be fairly easy to work with, but you should feel free to use whatever language and framework you feel most comfortable with.
+ 3. Your favorite programming language and framework. As an example, we provide [the skeleton of a web application](nextjs-app) built with Next.js & HTTPS Endpoints in Atlas App Services that should be fairly easy to work with, but you should feel free to use whatever language and framework you feel most comfortable with.
 
 ### Import the data into MongoDB
 
