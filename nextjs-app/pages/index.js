@@ -95,7 +95,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-
+          
           <div className='col'>
             <div className='card border-info h-100'>
               <div className='card-header'>ℹ Resources</div>
