@@ -36,11 +36,11 @@ Create a `superheroes_game` database with the 3 collections below.
  2. `users` collection
  3. `games` collection
 
-In the `superheroes_cards` collection, import [dataset/superheroes-cards.json](./dataset/superheroes-cards.json).
- 
-In the `users` collection, import [dataset/superheroes-cards.json](./dataset/users.json).
- 
-In the `games` collection, import [dataset/superheroes-cards.json](./dataset/games.json).
+Then import the data you will play around with:
+
+ * In the `superheroes_cards` collection, import [dataset/superheroes-cards.json](./dataset/superheroes-cards.json).
+ * In the `users` collection, import [dataset/superheroes-cards.json](./dataset/users.json).
+ * In the `games` collection, import [dataset/superheroes-cards.json](./dataset/games.json).
 
 At this point, you should have everythig it takes to start working with your data.
 
