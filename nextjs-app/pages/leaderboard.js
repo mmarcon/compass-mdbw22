@@ -11,8 +11,8 @@ export default function Leaderboard() {
     fetch('https://us-east-1.aws.data.mongodb-api.com/app/application-0-ltahx/endpoint/leaderboard')
       .then((res) => res.json())
       .then((data) => {
-        setData(data)
-        setLoading(false)
+        setData(data);
+        setLoading(false);
       })
   }, []);
 

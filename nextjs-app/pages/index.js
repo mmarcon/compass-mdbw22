@@ -55,6 +55,18 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className='col'>
+            <div className='card'>
+              <div className='card-body'>
+                <h5 className='card-title'>Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️</h5>
+                <p className='card-text'>
+                  <Link href="/good-vs-evil">
+                    <a>Go to the Good vs Evil match</a>
+                  </Link>.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
