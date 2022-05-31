@@ -18,7 +18,7 @@ Depending on your interests, experience and technical skills, you can choose to 
 
 **We recommend cloning this repository on your computer to have all the material readily available.**
 
-### What you need
+### What you will need
 
 To make the best out of this workshop, we recommend setting up the following:
 
@@ -40,7 +40,7 @@ Then import the data you will play around with:
 
  * In the `superheroes_cards` collection, import [dataset/superheroes-cards.json](./dataset/superheroes-cards.json).
  * In the `users` collection, import [dataset/superheroes-cards.json](./dataset/users.json).
- * In the `games` collection, import [dataset/games.json](./dataset/games.json) (you will need to unzip [dataset/games.zip](./dataset/games.zip) to get `games.json).
+ * In the `games` collection, import [dataset/games.json](./dataset/games.json) (you will need to unzip [dataset/games.zip](./dataset/games.zip) to get `games.json`).
 
 At this point, you should have everythig it takes to start working with your data.
 
