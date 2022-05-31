@@ -25,7 +25,7 @@ export default function Home() {
         <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
           <div className='col'>
             <div className='card h-100 border-primary'>
-              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
+              <div className='card-header text-primary'>👩🏼‍💻&nbsp;Workshop</div>
               <div className='card-body'>
                 <h5 className='card-title'>Good 🦸🏻‍♂️ vs Evil 🦹🏻‍♂️</h5>
                 <p className='card-text'>
@@ -41,7 +41,7 @@ export default function Home() {
 
           <div className='col'>
             <div className='card h-100 border-primary'>
-              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
+              <div className='card-header text-primary'>👩🏼‍💻&nbsp;Workshop</div>
               <div className='card-body'>
                 <h5 className='card-title'>Leaderboard</h5>
                 <p className='card-text'>
@@ -56,7 +56,7 @@ export default function Home() {
 
           <div className='col'>
             <div className='card h-100 border-primary'>
-              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
+              <div className='card-header text-primary'>👩🏼‍💻&nbsp;Workshop</div>
               <div className='card-body'>
                 <h5 className='card-title'>Leaderboard by country</h5>
                 <p className='card-text'>
@@ -71,7 +71,7 @@ export default function Home() {
 
           <div className='col'>
             <div className='card h-100 border-primary'>
-              <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
+              <div className='card-header text-primary'>👩🏼‍💻&nbsp;Workshop</div>
               <div className='card-body'>
                 <h5 className='card-title'>Superheroes Catalog</h5>
                 <p className='card-text'>
@@ -79,15 +79,26 @@ export default function Home() {
                   by different criteria using <a href='https://www.mongodb.com/docs/atlas/atlas-search/'>Atlas Search</a>.
                 </p>
                 <Link href='/superheroes-catalog'>
-                  <a className='btn btn-primary'>Go to the catalog &rarr;</a>
+                  <a className='btn btn-primary'>Go to the Catalog &rarr;</a>
                 </Link>
               </div>
             </div>
           </div>
 
           <div className='col'>
+            <div className='card border-success h-100'>
+              <div className='card-header bg-success text-white'>💾 &nbsp;Code</div>
+              <div className='card-body'>
+                <h5 className='card-title'>Github Repo</h5>
+                <p className='card-text'>To get started, take a look at <a href='https://github.com/mmarcon/compass-mdbw22'><code>mmarcon/compass-mdbw22</code></a>, go through the <a href='https://github.com/mmarcon/compass-mdbw22/blob/main/README.md'>README file</a>, clone the repo and start hacking!</p>
+                <a className='btn btn-success' href='https://github.com/mmarcon/compass-mdbw22'>Go to the repo &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <div className='col'>
             <div className='card border-info h-100'>
-              <div className='card-header'>ℹ Resources</div>
+              <div className='card-header'>ℹ&nbsp;&nbsp;Resources</div>
               <div className='card-body'>
                 <h5 className='card-title'>Compass Docs</h5>
                 <p className='card-text'>If you are looking for how to do something in Compass, the online documentation is your best resource.</p>
@@ -98,7 +109,7 @@ export default function Home() {
 
           <div className='col'>
             <div className='card border-info h-100'>
-              <div className='card-header'>ℹ Resources</div>
+              <div className='card-header'>ℹ&nbsp;&nbsp;Resources</div>
               <div className='card-body'>
                 <h5 className='card-title'>MongoDB Aggregations Docs</h5>
                 <p className='card-text'>If you need to read the documentation for some of the aggregation framework stages and operators, check out the online manual.</p>
