@@ -340,5 +340,5 @@ Another interesting aspect of this superheroes game we can look at is what are t
 Here are a few suggestions to take this exercise beyond the basics:
 
  * Only list the top 10 winning cards.
- * See if you can change things around to evaluate the % of games that were won by a user who had each card. The collection schemas may not be optimal for this e you may need to reorganize the data.
+ * See if you can change things around to evaluate the % of games that were won by a user who had each card. The collection schemas may not be optimal for this use case and you may need to refactor it.
  * Create the corresponding [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) and update the [Next.js application](./nextjs-app) adding a page that points to your HTTPS endpoint.
