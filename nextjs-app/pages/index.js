@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='row row-cols-4 row-cols-md-4 g-4'>
+        <div className='row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>
           <div className='col'>
             <div className='card h-100 border-primary'>
               <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
@@ -73,13 +73,13 @@ export default function Home() {
             <div className='card h-100 border-primary'>
               <div className='card-header text-primary'>👩🏼‍💻 Workshop</div>
               <div className='card-body'>
-                <h5 className='card-title'>Superheroes Catalogue</h5>
+                <h5 className='card-title'>Superheroes Catalog</h5>
                 <p className='card-text'>
-                  Show the entire catalogue of superheroes, with the possibility to lookup superheroes
+                  Show the entire catalog of superheroes, with the possibility to lookup superheroes
                   by different criteria using <a href='https://www.mongodb.com/docs/atlas/atlas-search/'>Atlas Search</a>.
                 </p>
-                <Link href='/superheroes-catalogue'>
-                  <a className='btn btn-primary'>Go to the catalogue &rarr;</a>
+                <Link href='/superheroes-catalog'>
+                  <a className='btn btn-primary'>Go to the catalog &rarr;</a>
                 </Link>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <div className='col'>
             <div className='card border-info h-100'>
               <div className='card-header'>ℹ Resources</div>

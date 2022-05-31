@@ -46,7 +46,7 @@ export default function GoodVsEvil() {
 
         {
         isLoading ?
-          <p className='row row-cols-auto mt-5'>Loading cards...</p> : 
+          <p className='row-cols-1 row-cols-md-2 row-cols-lg-4 g-4'>Loading cards...</p> : 
           data && <div>
             <Team team={data[0]} />
             <Team team={data[1]} />

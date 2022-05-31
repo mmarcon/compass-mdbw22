@@ -264,4 +264,4 @@ Here are a few suggestions to take this exercise beyond the basics:
 
  * Play around with all the different aspects of Atlas Search and tweak the accuracy of the fuzzy matching
  * Build a [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) for the full text search functionality
- * Make a simple superheroes search page (`superheroes-catalogue`) as part of the Next.js application included in this repository.
+ * Make a simple superheroes search page (`superheroes-catalog`) as part of the Next.js application included in this repository. You can add additional filters too (e.g. alignment, powerstats, etc).
