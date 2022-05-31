@@ -52,6 +52,8 @@ db.getSiblingDB('superheroes_game').superheroes_cards.findOne({name: 'Atom Girl'
 db.getSiblingDB('superheroes_game').games.findOne({_id: ObjectId('628b5c24ff7e14826f6d92da')}).v === 2 ? 'All good' : 'Something went wrong'
 ```
 
+<hr>
+
 ### Recreate the Good vs Evil battle
 
 Note: in the live demo, we used a [`$topN`](https://www.mongodb.com/docs/upcoming/reference/operator/aggregation/topN/) accumulator in the `$group` stage. This is a feature introduced in MongoDB 5.2.
@@ -73,6 +75,7 @@ Here are the powerstats multipliers:
 <summary>Good 🦸🏼‍♀️ vs Evil 🦹🏻‍♂️ battle aggregation</summary>
 
 ```javascript
+// collection: superheroes_cards
 [{
     $match: {
       "biography.alignment": {
@@ -154,6 +157,8 @@ The good news is that a collection scan is often easy to avoid by adding the rig
 * Create a [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) in MongoDB Atlas App Services that users a function to generate the battle. The function could return not only the total score for the Good and Evil teams but also the cards that were used for the battle. This way, you could have a simple web page that calls the endpoint and displays the cards.
 * Update the [Next.js application](./nextjs-app) to point to your HTTPS endpoint and to display more information about the teams of superheroes.
 
+<hr>
+
 ### Leaderboard
 
 You will now build a leaderboard for this Superheroes game.
@@ -164,6 +169,7 @@ We want the leaderboard to contain the 10 users who won the biggest number of ga
 <summary>Leaderboard aggregation</summary>
 
 ```javascript
+// collection: games
 [{
     $match: {
       winner: {
@@ -245,6 +251,7 @@ Now full text fuzzy search is just one aggregation stage away.
 <summary>Full text search by name</summary>
 
 ```javascript
+// collection: superheroes_cards
 [{
   $search: {
     index: 'default',
@@ -265,3 +272,73 @@ Here are a few suggestions to take this exercise beyond the basics:
  * Play around with all the different aspects of Atlas Search and tweak the accuracy of the fuzzy matching
  * Build a [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) for the full text search functionality
  * Make a simple superheroes search page (`superheroes-catalog`) as part of the Next.js application included in this repository. You can add additional filters too (e.g. alignment, powerstats, etc).
+
+<hr>
+
+### Most winning cards
+
+Another interesting aspect of this superheroes game we can look at is what are the cards that typically appear on a winning hand.
+
+<details>
+<summary>Cards ranked by total winning hands</summary>
+
+```javascript
+// collection: games
+[{
+  $match: {
+    winner: {
+      $ne: null
+    }
+  }
+}, {
+  $project: {
+    winningCards: {
+      $getField: {
+        field: 'cards',
+        input: {
+          $arrayElemAt: [{
+              $filter: {
+                input: '$players',
+                as: 'p',
+                cond: {
+                  $eq: [
+                    '$$p.user._id',
+                    '$winner'
+                  ]
+                }
+              }
+            },
+            0
+          ]
+        }
+      }
+    },
+    _id: 0
+  }
+}, {
+  $unwind: {
+    path: '$winningCards'
+  }
+}, {
+  $group: {
+    _id: '$winningCards.name',
+    wins: {
+      $sum: 1
+    }
+  }
+}, {
+  $sort: {
+    wins: -1
+  }
+}]
+```
+
+</details>
+
+#### 💡 How to make this more interesting
+
+Here are a few suggestions to take this exercise beyond the basics:
+
+ * Only list the top 10 winning cards.
+ * See if you can change things around to evaluate the % of games that were won by a user who had each card. The collection schemas may not be optimal for this e you may need to reorganize the data.
+ * Create the corresponding [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) and update the [Next.js application](./nextjs-app) adding a page that points to your HTTPS endpoint.
