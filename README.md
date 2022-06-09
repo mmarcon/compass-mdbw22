@@ -40,7 +40,7 @@ Then import the data you will play around with:
 
  * In the `superheroes_cards` collection, import [dataset/superheroes-cards.json](./dataset/superheroes-cards.json).
  * In the `users` collection, import [dataset/superheroes-cards.json](./dataset/users.json).
- * In the `games` collection, import [dataset/games.json](./dataset/games.json) (you will need to unzip [dataset/games.zip](./dataset/games.zip) to get `games.json`).
+ * In the `games` collection, import [dataset/games.json](./dataset/games.json) (you will need to unzip [dataset/games.json.zip](./dataset/games.json.zip) to get `games.json`).
 
 At this point, you should have everythig it takes to start working with your data.
 
