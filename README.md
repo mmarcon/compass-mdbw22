@@ -22,7 +22,7 @@ Depending on your interests, experience and technical skills, you can choose to 
 
 To make the best out of this workshop, we recommend setting up the following:
 
- 1. An Atlas cluster (free-tier should be enough). Follow [these steps](link-to-docs) to set one up.
+ 1. An Atlas cluster (free-tier should be enough). Follow [these steps](https://www.mongodb.com/docs/atlas/tutorial/create-new-cluster/) to set one up.
  2. [Compass](https://www.mongodb.com/docs/compass/current/install/) connected to your Atlas cluster.
  3. Your favorite programming language and framework. As an example, we provide [the skeleton of a web application](./nextjs-app) built with Next.js & HTTPS Endpoints in Atlas App Services that should be fairly easy to work with, but you should feel free to use whatever language and framework you feel most comfortable with ([here](https://compass-mdbw22.vercel.app/) is what it looks like).
 
@@ -39,7 +39,7 @@ Create a `superheroes_game` database with the 3 collections below.
 Then import the data you will play around with:
 
  * In the `superheroes_cards` collection, import [dataset/superheroes-cards.json](./dataset/superheroes-cards.json).
- * In the `users` collection, import [dataset/superheroes-cards.json](./dataset/users.json).
+ * In the `users` collection, import [/dataset/users.json](./dataset/users.json).
  * In the `games` collection, import [dataset/games.json](./dataset/games.json) (you will need to unzip [dataset/games.json.zip](./dataset/games.json.zip) to get `games.json`).
 
 At this point, you should have everythig it takes to start working with your data.
@@ -154,7 +154,7 @@ The good news is that a collection scan is often easy to avoid by adding the rig
 #### 💡 How to make this more interesting
 
 * Write a small application that generates the same battle from the command line with your favorite language (you can take advantage of "Export to language" in Compass)
-* Create a [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) in MongoDB Atlas App Services that users a function to generate the battle. The function could return not only the total score for the Good and Evil teams but also the cards that were used for the battle. This way, you could have a simple web page that calls the endpoint and displays the cards.
+* Create an [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) in MongoDB Atlas App Services that uses a function to generate the battle. The function could return not only the total score for the Good and Evil teams but also the cards that were used for the battle. This way, you could have a simple web page that calls the endpoint and displays the cards.
 * Update the [Next.js application](./nextjs-app) to point to your HTTPS endpoint and to display more information about the teams of superheroes.
 
 <hr>
@@ -227,7 +227,7 @@ Now that you've built your aggregation to compute the leaderboard, try to export
 Here are a few suggestions to take this exercise beyond the basics:
 
  * Use your favorite programming language to display the leaderboard on a webpage, on the terminal, or any other application and screen factor you'd like.
- * Create a [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) in MongoDB Atlas App Services for the leaderboard. Then display the results on a webpage or any other place you'd like or integrate the leaderboard with some other online services.
+ * Create an [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) in MongoDB Atlas App Services for the leaderboard. Then display the results on a webpage or any other place you'd like or integrate the leaderboard with some other online services.
  * If you want to do some more advanced aggregating, try to build leaderboards by country, i.e. the top 10 players from a given country. Hint: the data in the `games` collection might not be structured in the best way to support this use case. You may want to restructure it a bit, or create a materialized view (see `$out` and `$merge`), potentially in combination with an Atlas trigger to regenerate it periodically.
  * Update the [Next.js application](./nextjs-app) to point to your HTTPS endpoint.
  * Create a new page `leaderboard-by-country` in the Next.js application and have a country selector to display the leaderboard by country. Build an aggregation to build the list of countries dynamically.
@@ -270,7 +270,7 @@ Now full text fuzzy search is just one aggregation stage away.
 Here are a few suggestions to take this exercise beyond the basics:
 
  * Play around with all the different aspects of Atlas Search and tweak the accuracy of the fuzzy matching
- * Build a [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) for the full text search functionality
+ * Build an [HTTPS endpoint](https://www.mongodb.com/docs/atlas/app-services/endpoints/configure/) for the full text search functionality
  * Make a simple superheroes search page (`superheroes-catalog`) as part of the Next.js application included in this repository. You can add additional filters too (e.g. alignment, powerstats, etc).
 
 <hr>
